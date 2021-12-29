@@ -8,7 +8,7 @@ std::vector<int> init() {
     std::random_device dev;
     std::mt19937 engine(dev());
     std::uniform_int_distribution<int> random_item_num{0, 50};
-    std::uniform_int_distribution<int> random_num{INT_MIN, INT_MAX};
+    std::uniform_int_distribution<int> random_num{0, 90};
 
     int item_num = random_item_num(engine);
     std::vector<int> random_list = {};
@@ -25,5 +25,42 @@ TEST_CASE("Bubble Sort Testing") {
     auto tmp = random_list;
     std::sort(tmp.begin(), tmp.end());
     bubbleSort(random_list);
+    CHECK(tmp == random_list);
+}
+
+TEST_CASE("Selection Sort Testing") {
+    auto random_list = init();
+
+    auto tmp = random_list;
+    std::sort(tmp.begin(), tmp.end());
+    selectionSort(random_list);
+    CHECK(tmp == random_list);
+}
+
+TEST_CASE("Insertion Sort Testing") {
+    auto random_list = init();
+
+    auto tmp = random_list;
+    std::sort(tmp.begin(), tmp.end());
+    insertionSort(random_list);
+    CHECK(tmp == random_list);
+}
+
+TEST_CASE("Shell Sort Testing") {
+    auto random_list = init();
+
+    auto tmp = random_list;
+    std::sort(tmp.begin(), tmp.end());
+    shellSort(random_list);
+    CHECK(tmp == random_list);
+}
+
+
+TEST_CASE("Merge Sort Testing") {
+    auto random_list = init();
+
+    auto tmp = random_list;
+    std::sort(tmp.begin(), tmp.end());
+    mergeSort(random_list);
     CHECK(tmp == random_list);
 }

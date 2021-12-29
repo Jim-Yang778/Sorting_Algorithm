@@ -3,7 +3,7 @@ project(Sort_Algorithm)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Sort_Algorithm main.cpp algo/bubble_sort.cpp algo/helper.hpp algo/algos.hpp)
+add_executable(Sort_Algorithm main.cpp algo/algos.hpp algo/helper.hpp algo/bubble_sort.cpp algo/selection_sort.cpp algo/insertion_sort.cpp algo/shell_sort.cpp algo/merge_sort.cpp)
 
 find_package(Catch2 CONFIG REQUIRED)
 target_link_libraries(Sort_Algorithm PRIVATE Catch2::Catch2)
