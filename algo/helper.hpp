@@ -1,11 +1,11 @@
 #ifndef SORT_ALGORITHM_HELPER_HPP
 #define SORT_ALGORITHM_HELPER_HPP
 
-inline void swap(int &a, int &b) {
-    if (a == b) return;
-    a = a ^ b;
-    b = a ^ b;
-    a = a ^ b;
+template <typename T>
+inline void swap(T &a, T &b) {
+    T tmp = a;
+    a = b;
+    b = tmp;
 }
 
 #endif //SORT_ALGORITHM_HELPER_HPP

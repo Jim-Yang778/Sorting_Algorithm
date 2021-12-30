@@ -64,3 +64,21 @@ TEST_CASE("Merge Sort Testing") {
     mergeSort(random_list);
     CHECK(tmp == random_list);
 }
+
+TEST_CASE("Quick Sort Testing") {
+    auto random_list = init();
+
+    auto tmp = random_list;
+    std::sort(tmp.begin(), tmp.end());
+    quickSort(random_list);
+    CHECK(tmp == random_list);
+}
+
+TEST_CASE("Heap Sort Testing") {
+    auto random_list = init();
+
+    auto tmp = random_list;
+    std::sort(tmp.begin(), tmp.end());
+    heapSort(random_list);
+    CHECK(tmp == random_list);
+}
