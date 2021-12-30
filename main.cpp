@@ -75,7 +75,7 @@ TEST_CASE("Quick Sort Testing") {
 }
 
 TEST_CASE("Heap Sort Testing") {
-    auto random_list = init();
+    auto random_list = std::vector<int>{3, 33, 48, 7, 23, 73, 50, 33, 23, 18};
 
     auto tmp = random_list;
     std::sort(tmp.begin(), tmp.end());
