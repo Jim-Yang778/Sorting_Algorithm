@@ -37,8 +37,9 @@ void maxHeapify(std::vector<int>& list, int i, int len) {
 
 // 创建最大堆：每一个父节点都永远比其子节点要大
 void buildMaxHeap(std::vector<int>& list) {
-    for (int i = ((list.size() - 1) >> 1); i >= 0; --i) {
-        maxHeapify(list, i, list.size() - 1);
+    int len = list.size();
+    for (int i = ((len - 1) >> 1); i >= 0; --i) {
+        maxHeapify(list, i, len - 1);
     }
 }
 

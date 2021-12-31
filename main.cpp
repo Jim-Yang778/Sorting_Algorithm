@@ -8,7 +8,7 @@ std::vector<int> init() {
     std::random_device dev;
     std::mt19937 engine(dev());
     std::uniform_int_distribution<int> random_item_num{0, 50};
-    std::uniform_int_distribution<int> random_num{0, 90};
+    std::uniform_int_distribution<int> random_num{-90, 90};
 
     int item_num = random_item_num(engine);
     std::vector<int> random_list = {};
@@ -75,10 +75,37 @@ TEST_CASE("Quick Sort Testing") {
 }
 
 TEST_CASE("Heap Sort Testing") {
-    auto random_list = std::vector<int>{3, 33, 48, 7, 23, 73, 50, 33, 23, 18};
+    auto random_list = init();
 
     auto tmp = random_list;
     std::sort(tmp.begin(), tmp.end());
     heapSort(random_list);
+    CHECK(tmp == random_list);
+}
+
+TEST_CASE("Counting Sort Testing") {
+    auto random_list = init();
+
+    auto tmp = random_list;
+    std::sort(tmp.begin(), tmp.end());
+    countingSort(random_list);
+    CHECK(tmp == random_list);
+}
+
+TEST_CASE("Bucket Sort Testing") {
+    auto random_list = init();
+
+    auto tmp = random_list;
+    std::sort(tmp.begin(), tmp.end());
+    bucketSort(random_list);
+    CHECK(tmp == random_list);
+}
+
+TEST_CASE("Radix Sort Testing") {
+    auto random_list = init();
+
+    auto tmp = random_list;
+    std::sort(tmp.begin(), tmp.end());
+    radixSort(random_list);
     CHECK(tmp == random_list);
 }

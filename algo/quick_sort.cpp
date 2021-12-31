@@ -37,6 +37,7 @@ void quickSort(std::vector<int> &list, int start, int end) {
 // 主函数 带随机的快排
 void quickSort(std::vector<int> &list) {
     //srand设定随机种子
+    if (list.size() < 2) return;
     srand((unsigned)time(NULL));
     quickSort(list, 0, list.size() - 1);
 }
