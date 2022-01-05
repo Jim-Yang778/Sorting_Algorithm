@@ -1,4 +1,4 @@
-# Sort_Algorithm
+# Sorting_Algorithm
 
 main.cpp 用于测试（使用Catch2）
 
