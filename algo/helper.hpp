@@ -8,8 +8,4 @@ inline void swap(T &a, T &b) {
     a = std::move(b);
     b = std::move(tmp);
 }
-
-template <typename T>
-
-
 #endif //SORT_ALGORITHM_HELPER_HPP
