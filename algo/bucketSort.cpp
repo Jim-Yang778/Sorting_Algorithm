@@ -1,4 +1,5 @@
 #include <limits.h>
+#include "spdlog/spdlog.h"
 #include "helper.hpp"
 #include "algos.hpp"
 
@@ -16,7 +17,7 @@ void bucketSort(std::vector<int> &list) {
     int len = list.size() / 4;
     std::vector<std::vector<int>> buckets(len, std::vector<int>{});
     // 使用section 来划分进哪个buckets
-    int section = (float)diff / (float)(len - 1);
+    float section = (float)diff / (float)(len - 1);
 
     for (int i = 0; i < list.size(); ++i) {
         int num = (list[i] / section) - 1;

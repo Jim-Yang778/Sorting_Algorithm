@@ -18,6 +18,16 @@ add_executable(Sort_Algorithm
         algo/bucketSort.cpp
         algo/radix_sort.cpp
         )
+# Catch2
+find_package(Catch2 3 REQUIRED)
 
-find_package(Catch2 CONFIG REQUIRED)
-target_link_libraries(Sort_Algorithm PRIVATE Catch2::Catch2)
+# spdlog
+if(NOT TARGET spdlog)
+    # Stand-alone build
+    find_package(spdlog REQUIRED)
+endif()
+
+
+target_link_libraries(Sort_Algorithm PRIVATE
+                      Catch2::Catch2WithMain
+                      spdlog::spdlog $<$<BOOL:${MINGW}>:ws2_32>)
